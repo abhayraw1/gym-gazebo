@@ -233,10 +233,10 @@
     ros_topic="sonar_front"
     update_rate="10"
     min_range="0.06"
-    max_range="20.0"
+    max_range="1.50"
     field_of_view_horizontal="${270*M_PI/180}"
     field_of_view_vertical="${1*M_PI/180}"
-    ray_count_horizontal="200"
+    ray_count_horizontal="100"
     ray_count_vertical="1"
     sensor_mesh="lidar_lite_v2_withRay/meshes/lidar_lite_v2_withRay.dae">
     <origin xyz="0 0.0 0.5" rpy="0 0 0"/>

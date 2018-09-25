@@ -7,6 +7,10 @@ logger = logging.getLogger(__name__)
 # ----------------------------------------
 
 # Turtlebot envs
+register(id='GazeboFormationTurtlebotLidar-v0',
+    entry_point='gym_gazebo.envs.turtlebot:GazeboFormationTurtlebotLidarEnv'
+    )
+
 register(
     id='GazeboMazeTurtlebotLidar-v0',
     entry_point='gym_gazebo.envs.turtlebot:GazeboMazeTurtlebotLidarEnv',

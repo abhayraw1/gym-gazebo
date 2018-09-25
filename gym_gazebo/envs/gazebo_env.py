@@ -25,6 +25,7 @@ class GazeboEnv(gym.Env):
 
         # Launch the simulation with the given launchfile name
         rospy.init_node('gym', anonymous=True)
+        print rospy.Time.now()
 
         if launchfile.startswith("/"):
             fullpath = launchfile

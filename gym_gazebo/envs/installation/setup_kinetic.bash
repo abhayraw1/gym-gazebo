@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 if [ -z "$ROS_DISTRO" ]; then
   echo "ROS not installed. Check the installation steps: https://github.com/erlerobot/gym#installing-the-gazebo-environment"
@@ -10,7 +10,7 @@ if [ $condition -eq 0 ] ; then
     echo "Gazebo is not installed. Check the installation steps: https://github.com/erlerobot/gym#installing-the-gazebo-environment"
 fi
 
-source /opt/ros/kinetic/setup.bash
+source /opt/ros/kinetic/setup.zsh
 
 # Create catkin_ws
 ws="catkin_ws"
@@ -77,15 +77,15 @@ vcs import < ../../gazebo.repos
 
 cd ..
 catkin_make --pkg mav_msgs
-source devel/setup.bash
+source devel/setup.zsh
 catkin_make -j 1
-bash -c 'echo source `pwd`/devel/setup.bash >> ~/.bashrc'
+zsh -c 'echo source `pwd`/devel/setup.zsh >> ~/.zshrc'
 echo "## ROS workspace compiled ##"
 
 # add own models path to gazebo models path
 if [ -z "$GAZEBO_MODEL_PATH" ]; then
-  bash -c 'echo "export GAZEBO_MODEL_PATH="`pwd`/../../assets/models >> ~/.bashrc'
-  exec bash #reload bashrc
+  zsh -c 'echo "export GAZEBO_MODEL_PATH="`pwd`/../../assets/models >> ~/.zshrc'
+  exec zsh #reload zshrc
 fi
 
 # # Theano and Keras installation and requisites
