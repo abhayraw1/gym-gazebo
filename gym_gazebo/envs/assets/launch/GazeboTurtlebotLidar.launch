@@ -33,8 +33,7 @@
            <remap from="cmd_vel_mux/output" to="mobile_base/commands/velocity"/>
          </node>
 
-         <node pkg="tf" type="static_transform_publisher" name="base_to_laser_broadcaster" args="0 0 0 0 0 0 /$(arg namespace)/base_footprint /$(arg namespace)/sonar2_link 100" />
-
+         <node pkg="tf" type="static_transform_publisher" name="base_to_laser_broadcaster" args="0 0 0 0 0 0 /$(arg namespace)/base_link /$(arg namespace)/sonar2_link 100" />
          <!-- Bumper/cliff to pointcloud (not working, as it needs sensors/core messages) -->
          <include file="$(find turtlebot_bringup)/launch/includes/kobuki/bumper2pc.launch.xml"/>
     </group>
